@@ -33,20 +33,23 @@ export default function App() {
   return (
     <div
       style={{
-        minHeight: '100vh',
+        height: '100dvh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 24,
-        padding: '32px 16px 48px',
+        gap: 16,
+        padding:
+          'calc(20px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) calc(16px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left))',
         fontFamily: "'Nunito', sans-serif",
+        overflow: 'hidden',
       }}
     >
       <div
         style={{
           width: '100%',
           maxWidth: 430,
-          minHeight: 700,
+          flex: 1,
+          minHeight: 0,
           borderRadius: 32,
           background: theme.bg,
           boxShadow: `0 30px 60px rgba(0,0,0,0.35), 0 0 0 1px ${theme.border}`,
