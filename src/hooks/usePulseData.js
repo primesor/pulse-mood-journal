@@ -5,11 +5,9 @@ import {
   loadApiKey,
   loadCustomTags,
   loadEntries,
-  loadPalette,
   saveApiKey,
   saveCustomTags,
   saveEntries,
-  savePalette,
   clearApiKey,
 } from '../storage.js';
 
@@ -52,14 +50,8 @@ export function buildChart(values, ticksRaw) {
 
 export function usePulseData() {
   const [entries, setEntries] = useState(() => loadEntries());
-  const [palette, setPaletteState] = useState(() => loadPalette());
   const [customTags, setCustomTags] = useState(() => loadCustomTags());
   const [apiKey, setApiKeyState] = useState(() => loadApiKey());
-
-  const setPalette = useCallback((key) => {
-    setPaletteState(key);
-    savePalette(key);
-  }, []);
 
   const setApiKey = useCallback((key) => {
     setApiKeyState(key);
@@ -277,8 +269,6 @@ export function usePulseData() {
     addEntry,
     deleteEntry,
     streak,
-    palette,
-    setPalette,
     customTags,
     addCustomTag,
     apiKey,

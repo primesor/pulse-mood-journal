@@ -3,8 +3,6 @@ import {
   dateKey,
   loadEntries,
   saveEntries,
-  loadPalette,
-  savePalette,
   loadCustomTags,
   saveCustomTags,
   loadApiKey,
@@ -51,17 +49,6 @@ describe('entries', () => {
     expect(migrated[0]).toMatchObject({ date: '2026-01-01', mood: 3, note: 'old note', tags: ['Sleep'] });
     // second load should not re-migrate or duplicate
     expect(loadEntries()).toHaveLength(1);
-  });
-});
-
-describe('palette', () => {
-  it('defaults to dusk', () => {
-    expect(loadPalette()).toBe('dusk');
-  });
-
-  it('round-trips saved palette', () => {
-    savePalette('honey');
-    expect(loadPalette()).toBe('honey');
   });
 });
 

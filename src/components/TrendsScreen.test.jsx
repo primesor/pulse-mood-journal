@@ -11,12 +11,11 @@ vi.mock('../ai.js', () => ({
 
 import { generateAIInsights } from '../ai.js';
 
-const theme = PALETTES.dusk;
+const theme = PALETTES.cream;
 
 function baseProps(overrides = {}) {
   return {
     theme,
-    palette: 'dusk',
     hasEnoughRealData: false,
     rangeSeries: vi.fn(() => ({ values: [], ticks: [], entries: [] })),
     heatmapForRange: vi.fn(() => Array.from({ length: 7 }, (_, i) => ({ label: 'MTWTFSS'[i], value: null }))),

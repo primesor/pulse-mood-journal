@@ -1,6 +1,5 @@
 const LEGACY_ENTRIES_KEY = 'pulse.entries.v1'; // old one-entry-per-day dict, migrated from
 const ENTRIES_KEY = 'pulse.entries.v2'; // array of {id, date, time, mood, note, tags}
-const PALETTE_KEY = 'pulse.palette.v1';
 const CUSTOM_TAGS_KEY = 'pulse.customTags.v1';
 const API_KEY_KEY = 'pulse.geminiApiKey.v1';
 const AI_INSIGHTS_CACHE_KEY = 'pulse.aiInsightsCache.v1';
@@ -58,14 +57,6 @@ export function loadEntries() {
 
 export function saveEntries(entries) {
   localStorage.setItem(ENTRIES_KEY, JSON.stringify(entries));
-}
-
-export function loadPalette() {
-  return localStorage.getItem(PALETTE_KEY) || 'dusk';
-}
-
-export function savePalette(key) {
-  localStorage.setItem(PALETTE_KEY, key);
 }
 
 export function loadCustomTags() {

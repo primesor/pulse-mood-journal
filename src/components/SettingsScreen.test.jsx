@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import SettingsScreen from './SettingsScreen.jsx';
 import { PALETTES } from '../palettes.js';
 
-const theme = PALETTES.dusk;
+const theme = PALETTES.cream;
 
 describe('SettingsScreen', () => {
   it('saves the typed key', async () => {

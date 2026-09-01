@@ -8,7 +8,6 @@ const RANGE_LABEL = { '7D': 'last 7 days', '30D': 'last 30 days', All: 'all your
 
 export default function TrendsScreen({
   theme,
-  palette,
   hasEnoughRealData,
   rangeSeries,
   heatmapForRange,
@@ -89,7 +88,7 @@ export default function TrendsScreen({
     runAI(true, key);
   }
 
-  const heatHue = palette === 'honey' ? 90 : palette === 'cream' ? 65 : 30;
+  const heatHue = theme.heatHue;
 
   return (
     <div className="pulse-scroll" style={{ flex: 1, overflowY: 'auto', padding: '32px 24px 40px' }}>

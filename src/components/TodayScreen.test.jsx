@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import TodayScreen from './TodayScreen.jsx';
 import { PALETTES } from '../palettes.js';
 
-const theme = PALETTES.dusk;
+const theme = PALETTES.cream;
 
 function setup(props = {}) {
   const onSave = vi.fn();

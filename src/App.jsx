@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import PaletteSwitcher from './components/PaletteSwitcher.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import TodayScreen from './components/TodayScreen.jsx';
 import TrendsScreen from './components/TrendsScreen.jsx';
@@ -14,8 +13,6 @@ export default function App() {
     addEntry,
     deleteEntry,
     streak,
-    palette,
-    setPalette,
     customTags,
     addCustomTag,
     apiKey,
@@ -27,7 +24,7 @@ export default function App() {
     insightsReal,
   } = usePulseData();
 
-  const theme = PALETTES[palette];
+  const theme = PALETTES.cream;
 
   useEffect(() => {
     document.body.style.background = theme.page;
@@ -45,8 +42,6 @@ export default function App() {
         fontFamily: "'Nunito', sans-serif",
       }}
     >
-      <PaletteSwitcher theme={theme} palette={palette} onSelect={setPalette} />
-
       <div
         style={{
           width: '100%',
@@ -74,7 +69,6 @@ export default function App() {
         {screen === 'trends' && (
           <TrendsScreen
             theme={theme}
-            palette={palette}
             hasEnoughRealData={hasEnoughRealData}
             rangeSeries={rangeSeries}
             heatmapForRange={heatmapForRange}
