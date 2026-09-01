@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; padding: 0; height: 100%; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--page);
+  transition: background 0.2s;
+}
+textarea, button, input {
+  font-family: 'Nunito', sans-serif;
+}
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pulse-scroll::-webkit-scrollbar { width: 0; height: 0; }
+.pulse-scroll { scrollbar-width: none; }
